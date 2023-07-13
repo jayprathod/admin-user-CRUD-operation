@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FormWizard_v6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="colorlib.com" />
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link
+      rel="stylesheet"
+      href="src/update/fonts/material-design-iconic-font/css/material-design-iconic-font.css"
+    />
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="src/update/css/style.css" />
+    <style>
+      .btn-grad {
+        background-image: linear-gradient(
+          to right,
+          #77a1d3 0%,
+          #79cbca 51%,
+          #77a1d3 100%
+        );
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .btn-grad:hover {
+        cursor: pointer;
+        background-position: right center;
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form method="POST" action="" enctype="multipart/form-data">
+        <div id="wizard">
+          <!-- SECTION 1 -->
+          <h4></h4>
+          <section>
+            <div class="form-header">
+              <div class="avartar">
+                <a href="#">
+                  <img
+                    src="<%= user.image %>"
+                    style="border-radius: 50%; height: 150px; width: 150px"
+                    alt=""
+                  />
+                </a>
+                <div class="avartar-picker">
+                  <input
+                    type="file"
+                    name="image"
+                    id="file-1"
+                    class="inputfile"
+                  />
+                  <input type="hidden" name="user_id" value="<%= user._id %>" />
+                  <label for="file-1">
+                    <i class="zmdi zmdi-camera"></i>
+                    <span>Choose Picture</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-holder active">
+                  <input
+                    type="text"
+                    name="name"
+                    value="<%= user.name %>"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-holder">
+                  <input
+                    type="text"
+                    name="lname"
+                    value="<%= user.lname %>"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-holder">
+                  <input
+                    type="text"
+                    name="email"
+                    value="<%= user.email %>"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-holder">
+              <input
+                type="text"
+                name="mobile"
+                value="<%= user.mobile %>"
+                class="form-control"
+              />
+            </div>
+            <div class="form-holder">
+              <input
+                type="text"
+                name="password"
+                placeholder="Reset Password"
+                value=""
+                class="form-control"
+              />
+            </div>
+            <input type="submit" value="Update Profile" class="btn-grad" />
+          </section>
+        </div>
+      </form>
+    </div>
+
+    <script src="src/update/js/jquery-3.3.1.min.js"></script>
+
+    <!-- JQUERY STEP -->
+    <script src="src/update/js/jquery.steps.js"></script>
+
+    <script src="src/update/js/main.js"></script>
+  </body>
+</html>

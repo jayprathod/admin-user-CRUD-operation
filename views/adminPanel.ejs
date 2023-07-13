@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Admin Panel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="src/table/css/style.css">
+	<style>
+
+        #button1{
+            background-color: #008cba;
+			font-size: 20px;
+            color: white;
+            border: none;
+            padding: 6px 32px;
+            text-align: center;
+            text-decoration: none;
+            left: 20%;
+            margin-top: 50px;
+            transform: translate(-20%,-80%);
+            
+
+        }
+
+        #button1:hover{
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 7px 32px;
+            text-align: center;
+            text-decoration: none;
+            left: 20%;
+            margin-top: 25px;
+            transform: translate(-20%,-80%);
+            
+
+        }
+    </style>
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Admin Panel</h2>
+					<a href="/admin/home" class="heading-section" id="button1">Back</a>
+					
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+						    <tr>
+							  <th>Profile</th>
+						      <th>Full Name</th>
+						      <th>Email ID</th>
+						      <th>Mobile</th>
+						      <th>Edit Data</th>
+						      <th>Delete Data</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+
+							<% 
+							if(users.length > 0){
+								for(let i=0; i<users.length;i++){
+							%>
+						    <tr class="alert" role="alert">
+
+								<td><img src="/<%= users[i].image %>" style="width:100px; height:100px;border-radius: 50%;"  alt="<%= users[i].image %>"></td>
+								<td><%= users[i].name %> <%= users[i].lname %></td>
+								<td><%= users[i].email %></td>
+								<td><%= users[i].mobile %></td>
+								
+						      <td>
+						      	<a href="/admin/edit-User?id=<%= users[i]._id %>" style="align-items: center;padding-left: 25%;">
+				            	Edit
+				          	</a>
+				        	</td>
+						      <td>
+						      	<a href="/admin/delet-user?id=<%= users[i]._id %>" style="align-items: center;padding-left: 25%;">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</a>
+				        	</td>
+						    </tr>
+							<%
+        					}
+    						}
+
+						    else{
+								%>
+								<tr>
+									<td colspan="5">Users Data Not Found<td>
+								</tr>
+								<%
+							}
+							%>
+
+						  </tbody>
+						  
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="src/table/js/jquery.min.js"></script>
+  <script src="src/table/js/popper.js"></script>
+  <script src="src/table/js/bootstrap.min.js"></script>
+  <script src="src/table/js/main.js"></script>
+
+	</body>
+</html>
+

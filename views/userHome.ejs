@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Panel</title>
+    <link href="src/userCard/user.css" rel="stylesheet" id="bootstrap-css" />
+    <style>
+      #user_Panel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .button1 {
+        position: absolute;
+        background-color: #008cba;
+        color: white;
+        border: none;
+        padding: 7px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        left: 20%;
+        margin-top: 25px;
+        transform: translate(-20%, -80%);
+      }
+
+      .button1:hover {
+        position: absolute;
+        background-color: #008cba;
+        color: white;
+        border: none;
+        padding: 7px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        left: 20%;
+        margin-top: 25px;
+        transform: translate(-20%, -80%);
+      }
+
+      .button2 {
+        position: absolute;
+        background-color: #008cba;
+        color: white;
+        border: none;
+        padding: 7px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        right: 10%;
+        margin-top: 25px;
+        transform: translate(0%, -80%);
+      }
+
+      .button2:hover {
+        position: absolute;
+        background-color: #008cba;
+        color: white;
+        border: none;
+        padding: 7px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        right: 10%;
+        margin-top: 25px;
+        transform: translate(0%, -80%);
+      }
+    </style>
+  </head>
+  <body>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <div class="container py-5">
+      <div class="row text-center text-white">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="display-4">User Panel</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row text-center">
+        <!-- Team item -->
+        <div class="col-xl-3 col-sm-6 mb-5" id="user_Panel">
+          <!-- <div > -->
+          <div class="bg-white rounded shadow-sm py-5 px-4">
+            <img
+              src="<%= user.image %>"
+              alt=""
+              style="width: 100px; height: 100px"
+              class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+            />
+            <h5 class="mb-0" style="margin-bottom: 10px">
+              <%= user.name %> <%= user.lname %>
+            </h5>
+            <span class="small text-uppercase text-muted"
+              ><%= user.email %></span
+            ><br />
+            <span class="small text-uppercase text-muted"
+              ><%= user.mobile %></span
+            ><br />
+
+            <ul class="social mb-0 list-inline mt-3">
+              <a href="/edit?id=<%=user._id%>" class="button1">Edit</a>
+              <a href="/logout" class="button2">Logout</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
